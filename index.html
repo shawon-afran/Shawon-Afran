@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shawon Afran — Portfolio</title>
+  <!-- Relative path linking to ensure GitHub Pages loads CSS properly -->
+  <link rel="stylesheet" href="style.css?v=1.0">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="top-bar">
+      <p class="live-status">SOUNDTRACK SYSTEM LIVE</p>
+      <a href="#" class="brand-logo">&lt;/&gt; SHAWON AFRAN</a>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#home">01. HOME</a></li>
+        <li><a href="#about">02. ABOUT</a></li>
+        
+        <!-- 03. CONTACT (2x2 Grid Layout) -->
+        <li class="nav-contact-group">
+          <a href="#contact" class="nav-heading">03. CONTACT</a>
+          <div class="contact-links-grid">
+            <a href="mailto:your-email@example.com">Email Us</a>
+            <a href="https://facebook.com" target="_blank">Facebook</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+          </div>
+        </li>
+
+        <!-- 04. FEEDBACK -->
+        <li><a href="#feedback">04. FEEDBACK</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <a href="#contact" class="connect-link">CONNECT &rarr;</a>
+      <p class="tagline">ARCHITECTING DIGITAL FUTURE</p>
+      
+      <h1 class="main-title">SHAWON<br>AFRAN</h1>
+      
+      <p class="subtitle">i_am_a_expert SOFTWARE |</p>
+      
+      <p class="description">
+        Crafting high-precision, scalable digital experiences with advanced architecture, immaculate design aesthetics, and uncompromising performance.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="#contact" class="btn-primary">INITIATE PROJECT ⚡</a>
+        <a href="#projects" class="btn-secondary">EXPLORE ECOSYSTEM 🧭</a>
+      </div>
+    </section>
+
+    <!-- Showcase Section -->
+    <section id="projects" class="image-showcase">
+      <div class="card-image">
+        <h2>Billu</h2>
+      </div>
+    </section>
+
+    <!-- Public Feedback Submission Section -->
+    <section id="feedback" class="feedback-container">
+      <h2>04. FEEDBACK</h2>
+      <p class="feedback-intro">Leave your valuable feedback and rating below:</p>
+
+      <!-- Feedback Form -->
+      <form id="feedbackForm" class="feedback-form">
+        <input type="text" id="userName" placeholder="Your Name" required />
+        
+        <select id="userRating" required>
+          <option value="" disabled selected>Select Rating</option>
+          <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
+          <option value="4">⭐⭐⭐⭐ (4/5)</option>
+          <option value="3">⭐⭐⭐ (3/5)</option>
+          <option value="2">⭐⭐ (2/5)</option>
+          <option value="1">⭐ (1/5)</option>
+        </select>
+
+        <textarea id="userMessage" placeholder="Write your feedback..." rows="4" required></textarea>
+        
+        <button type="submit" id="submitBtn">Submit Feedback</button>
+      </form>
+      <p id="statusMsg" class="status-msg"></p>
+    </section>
+
+    <!-- Secret Admin Panel Section (Protected) -->
+    <section class="secret-admin-section">
+      <div class="secret-header">
+        <button id="toggleAdminBtn" class="admin-toggle-btn">🔒 Owner Secret Login</button>
+      </div>
+
+      <div id="adminPanel" class="admin-panel hidden">
+        <h3>🔐 Secret Admin Panel</h3>
+        <p class="admin-desc">Enter Secret PIN to view submitted user feedbacks & ratings.</p>
+        
+        <div id="pinBox" class="pin-box">
+          <input type="password" id="adminPinInput" placeholder="Enter Secret PIN" />
+          <button id="unlockBtn">Unlock Panel</button>
+        </div>
+
+        <div id="adminFeedbackContainer" class="admin-feedback-container hidden">
+          <h4>All User Feedbacks (Live Database):</h4>
+          <div id="adminFeedbackList" class="feedback-cards-wrapper">
+            <!-- Dynamic feedbacks loaded via JavaScript -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Firebase Realtime Database SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  
+  <script src="script.js?v=1.0"></script>
+</body>
+</html>
