@@ -1,0 +1,317 @@
+/* Base Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Courier New', Courier, monospace, sans-serif !important;
+}
+
+body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  padding: 20px;
+  line-height: 1.4;
+}
+
+/* Header & Top Navigation */
+header {
+  margin-bottom: 30px;
+}
+
+.top-bar {
+  margin-bottom: 10px;
+}
+
+.live-status {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #333333;
+}
+
+.brand-logo {
+  color: #4b0082 !important;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.main-nav ul {
+  list-style: none;
+}
+
+.main-nav ul li {
+  margin-bottom: 12px;
+}
+
+.main-nav a {
+  color: #4b0082 !important;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Contact 2x2 Grid Layout */
+.nav-contact-group {
+  margin-bottom: 15px;
+}
+
+.contact-links-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 120px) !important;
+  gap: 6px 15px !important;
+  margin-top: 6px;
+  margin-left: 20px;
+}
+
+.contact-links-grid a {
+  font-size: 12px !important;
+  color: #333333 !important;
+}
+
+.contact-links-grid a:hover {
+  color: #4b0082 !important;
+}
+
+/* Hero Section */
+.hero-section {
+  margin-bottom: 40px;
+}
+
+.connect-link {
+  color: #4b0082 !important;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.tagline {
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-top: 4px;
+  color: #222222;
+}
+
+.main-title {
+  font-size: 42px;
+  font-weight: bold;
+  line-height: 1.05;
+  margin: 18px 0;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 13px;
+  margin-bottom: 15px;
+  color: #111111;
+}
+
+.description {
+  font-size: 13px;
+  max-width: 580px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+.cta-buttons a {
+  color: #4b0082 !important;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  margin-right: 15px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Showcase Card */
+.image-showcase {
+  margin-bottom: 50px;
+}
+
+.card-image {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.card-image h2 {
+  font-family: 'Brush Script MT', cursive, sans-serif !important;
+  font-size: 55px;
+  font-weight: normal;
+  color: #ffffff !important;
+}
+
+/* Public Feedback Container */
+.feedback-container {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 30px;
+  max-width: 550px;
+}
+
+.feedback-container h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #000000;
+}
+
+.feedback-intro {
+  font-size: 13px;
+  color: #555555;
+  margin-bottom: 15px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  background-color: #fcfcfc;
+}
+
+.feedback-form button {
+  padding: 10px;
+  background-color: #4b0082 !important;
+  color: #ffffff !important;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.feedback-form button:hover {
+  background-color: #320058 !important;
+}
+
+.status-msg {
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Secret Admin Section */
+.secret-admin-section {
+  margin-top: 60px;
+  border-top: 2px dashed #cccccc;
+  padding-top: 20px;
+  max-width: 550px;
+}
+
+.admin-toggle-btn {
+  background: none;
+  border: 1px solid #888;
+  padding: 6px 12px;
+  font-size: 11px;
+  cursor: pointer;
+  color: #555;
+  border-radius: 3px;
+}
+
+.admin-toggle-btn:hover {
+  background: #f0f0f0;
+}
+
+.admin-panel {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.admin-panel h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.admin-desc {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.pin-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.pin-box input {
+  padding: 8px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 180px;
+}
+
+.pin-box button {
+  padding: 8px 15px;
+  background-color: #111;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.admin-feedback-container h4 {
+  font-size: 13px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+}
+
+.feedback-card {
+  background-color: #ffffff;
+  border-left: 4px solid #4b0082;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #eee;
+  border-left-width: 4px;
+}
+
+.feedback-card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.reviewer-name {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.reviewer-stars {
+  font-size: 11px;
+}
+
+.reviewer-text {
+  font-size: 12px;
+  color: #333;
+}
+
+.feedback-date {
+  font-size: 10px;
+  color: #888;
+  margin-top: 5px;
+}
