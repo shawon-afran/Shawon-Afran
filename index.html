@@ -3,124 +3,288 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shawon Afran — Portfolio</title>
-  <!-- Relative path linking to ensure GitHub Pages loads CSS properly -->
-  <link rel="stylesheet" href="./style.css?v=999">
+  <title>Shawon Afran — Code Explorer & Visionary Engineer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="profile.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="profile.jpg">
+  <link rel="apple-touch-icon" href="profile.jpg">
+
+  <!-- Fonts & Iconography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Header / Navigation -->
-  <header>
-    <div class="top-bar">
-      <p class="live-status">SOUNDTRACK SYSTEM LIVE</p>
-      <a href="#" class="brand-logo">&lt;/&gt; SHAWON AFRAN</a>
+  <!-- 3D WebGL Background Engine -->
+  <div id="canvas-container"></div>
+
+  <!-- Custom Cyber Magnetic Cursor & Dynamic Trail -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-outline" id="cursor-outline"></div>
+
+  <!-- Audio Player Engine -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Floating Audio Widget -->
+  <div id="music-toggle" class="music-widget">
+    <div class="eq-bars">
+      <span class="bar bar1"></span>
+      <span class="bar bar2"></span>
+      <span class="bar bar3"></span>
+      <span class="bar bar4"></span>
     </div>
+    <div class="music-text-wrapper">
+      <span class="music-subtitle">SOUNDTRACK</span>
+      <span id="music-text" class="music-label">SYSTEM PAUSED</span>
+    </div>
+  </div>
 
-    <!-- Navigation Menu -->
-    <nav class="main-nav">
-      <ul>
-        <li><a href="#home">01. HOME</a></li>
-        <li><a href="#about">02. ABOUT</a></li>
-        
-        <!-- 03. CONTACT (2x2 Grid Layout) -->
-        <li class="nav-contact-group">
-          <a href="#contact" class="nav-heading">03. CONTACT</a>
-          <div class="contact-links-grid">
-            <a href="mailto:your-email@example.com">Email Us</a>
-            <a href="https://facebook.com" target="_blank">Facebook</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-            <a href="https://github.com" target="_blank">GitHub</a>
-          </div>
-        </li>
-
-        <!-- 04. FEEDBACK -->
-        <li><a href="#feedback">04. FEEDBACK</a></li>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="#home" class="logo-brand">
+      <span class="logo-symbol">&lt;/&gt;</span>
+      <span class="logo-text">SHAWON <span class="gold-gradient">AFRAN</span></span>
+    </a>
+    
+    <div class="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active"><span class="nav-num">01.</span> HOME</a></li>
+        <li><a href="#about" class="nav-link"><span class="nav-num">02.</span> ABOUT</a></li>
+        <li><a href="#feedback" class="nav-link"><span class="nav-num">03.</span> FEEDBACK</a></li>
+        <li><a href="#contact" class="nav-link"><span class="nav-num">04.</span> CONTACT</a></li>
       </ul>
-    </nav>
-  </header>
+      <a href="#contact" class="nav-btn">CONNECT <i class="fa-solid fa-arrow-right-long"></i></a>
+    </div>
+  </nav>
 
-  <!-- Main Content Area -->
-  <main>
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-      <a href="#contact" class="connect-link">CONNECT &rarr;</a>
-      <p class="tagline">ARCHITECTING DIGITAL FUTURE</p>
-      
-      <h1 class="main-title">SHAWON<br>AFRAN</h1>
-      
-      <p class="subtitle">i_am_a_expert SOFTWARE |</p>
-      
-      <p class="description">
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-section scroll-section">
+    <div class="hero-content animate-on-scroll">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span> ARCHITECTING DIGITAL FUTURE
+      </div>
+      <h1 class="hero-title">
+        SHAWON <br><span class="text-stroke">AFRAN</span>
+      </h1>
+      <div class="typewriter-container">
+        <span class="type-prefix">i_am_a_expert</span>
+        <span id="typewriter"></span><span class="type-cursor">|</span>
+      </div>
+      <p class="hero-description">
         Crafting high-precision, scalable digital experiences with advanced architecture, immaculate design aesthetics, and uncompromising performance.
       </p>
-
-      <div class="cta-buttons">
-        <a href="#contact" class="btn-primary">INITIATE PROJECT ⚡</a>
-        <a href="#projects" class="btn-secondary">EXPLORE ECOSYSTEM 🧭</a>
+      
+      <div class="hero-action-group">
+        <a href="#contact" class="btn-ultra btn-primary">
+          <span>INITIATE PROJECT</span>
+          <i class="fa-solid fa-bolt"></i>
+        </a>
+        <a href="#about" class="btn-ultra btn-glass">
+          <span>EXPLORE ECOSYSTEM</span>
+          <i class="fa-solid fa-compass"></i>
+        </a>
       </div>
-    </section>
+    </div>
 
-    <!-- Showcase Section -->
-    <section id="projects" class="image-showcase">
-      <div class="card-image">
-        <h2>Billu</h2>
-      </div>
-    </section>
-
-    <!-- Public Feedback Submission Section -->
-    <section id="feedback" class="feedback-container">
-      <h2>04. FEEDBACK</h2>
-      <p class="feedback-intro">Leave your valuable feedback and rating below:</p>
-
-      <!-- Feedback Form -->
-      <form id="feedbackForm" class="feedback-form">
-        <input type="text" id="userName" placeholder="Your Name" required />
-        
-        <select id="userRating" required>
-          <option value="" disabled selected>Select Rating</option>
-          <option value="5">⭐⭐⭐⭐⭐ (5/5)</option>
-          <option value="4">⭐⭐⭐⭐ (4/5)</option>
-          <option value="3">⭐⭐⭐ (3/5)</option>
-          <option value="2">⭐⭐ (2/5)</option>
-          <option value="1">⭐ (1/5)</option>
-        </select>
-
-        <textarea id="userMessage" placeholder="Write your feedback..." rows="4" required></textarea>
-        
-        <button type="submit" id="submitBtn">Submit Feedback</button>
-      </form>
-      <p id="statusMsg" class="status-msg"></p>
-    </section>
-
-    <!-- Secret Admin Panel Section (Protected) -->
-    <section class="secret-admin-section">
-      <div class="secret-header">
-        <button id="toggleAdminBtn" class="admin-toggle-btn">🔒 Owner Secret Login</button>
+    <!-- 3D Avatar Deck with Circular Rotating Tech Icons -->
+    <div class="hero-avatar-deck animate-on-scroll">
+      <div class="avatar-backdrop-glow"></div>
+      <div class="hologram-ring outer-ring"></div>
+      <div class="hologram-ring inner-ring"></div>
+      
+      <div class="avatar-frame">
+        <img src="profile.jpg" alt="Shawon Afran" class="avatar-image">
+        <div class="avatar-scanline"></div>
       </div>
 
-      <div id="adminPanel" class="admin-panel hidden">
-        <h3>🔐 Secret Admin Panel</h3>
-        <p class="admin-desc">Enter Secret PIN to view submitted user feedbacks & ratings.</p>
-        
-        <div id="pinBox" class="pin-box">
-          <input type="password" id="adminPinInput" placeholder="Enter Secret PIN" />
-          <button id="unlockBtn">Unlock Panel</button>
+      <!-- Circular Orbit Tech Badges -->
+      <div class="orbit-container">
+        <div class="orbit-badge b-1"><i class="fa-brands fa-html5"></i></div>
+        <div class="orbit-badge b-2"><i class="fa-brands fa-css3-alt"></i></div>
+        <div class="orbit-badge b-3"><i class="fa-brands fa-js"></i></div>
+        <div class="orbit-badge b-4"><i class="fa-brands fa-python"></i></div>
+        <div class="orbit-badge b-5"><i class="fa-brands fa-git-alt"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about-section scroll-section">
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">STRUCTURE & CAPABILITIES</span>
+      <h2 class="section-title">THE ARCHITECTURE</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="about-deck">
+      <div class="glass-card main-about-card animate-on-scroll">
+        <div class="card-glow-edge"></div>
+        <h3 class="card-title"><i class="fa-solid fa-microchip"></i> Engineering Without Limits</h3>
+        <p class="card-text">
+          I find perfection in complex algorithms, flawless UI/UX execution, and high-performance system architectures. Every pixel and line of code is meticulously engineered to achieve modern elegance and speed.
+        </p>
+
+        <h4 class="sub-heading"><i class="fa-solid fa-layer-group"></i> Core Competencies</h4>
+        <div class="skills-grid">
+          <div class="skill-chip"><i class="fa-solid fa-code"></i> Programming</div>
+          <div class="skill-chip"><i class="fa-solid fa-laptop-code"></i> Web Development</div>
+          <div class="skill-chip"><i class="fa-solid fa-gears"></i> Software Architecture</div>
+          <div class="skill-chip"><i class="fa-solid fa-network-wired"></i> Computer Networking</div>
+          <div class="skill-chip"><i class="fa-solid fa-database"></i> Database Management</div>
+          <div class="skill-chip"><i class="fa-solid fa-brain"></i> Artificial Intelligence</div>
+          <div class="skill-chip"><i class="fa-solid fa-shield-halved"></i> Cybersecurity</div>
+          <div class="skill-chip"><i class="fa-solid fa-puzzle-piece"></i> Problem Solving</div>
+          <div class="skill-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> UI/UX Engineering</div>
         </div>
+      </div>
 
-        <div id="adminFeedbackContainer" class="admin-feedback-container hidden">
-          <h4>All User Feedbacks (Live Database):</h4>
-          <div id="adminFeedbackList" class="feedback-cards-wrapper">
-            <!-- Dynamic feedbacks loaded via JavaScript -->
+      <!-- IDE DEVELOPER CARD -->
+      <div class="ide-card animate-on-scroll">
+        <div class="ide-header">
+          <div class="ide-controls">
+            <span class="ide-btn close"></span>
+            <span class="ide-btn minimize"></span>
+            <span class="ide-btn maximize"></span>
+          </div>
+          <div class="ide-tab">
+            <i class="fa-brands fa-js brand-icon-js"></i> developer.js
+          </div>
+        </div>
+        
+        <div class="ide-body">
+          <div class="line-numbers">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+          </div>
+          <div class="code-content">
+<pre><code><span class="c-kw">const</span> <span class="c-var">developer</span> = {
+  <span class="c-prop">name</span>: <span class="c-str">'Shawon Afran'</span>,
+  <span class="c-prop">role</span>: <span class="c-str">'CODE EXPLORER'</span>,
+  <span class="c-prop">status</span>: <span class="c-str">'Building Future Tech'</span>,
+  <span class="c-prop">passion</span>: <span class="c-str">'Innovating without limits'</span>
+};
+
+<span class="c-cm">// Always searching for the next big challenge.</span>
+<span class="c-var">developer</span>.<span class="c-fn">explore</span>();</code></pre>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <!-- Firebase Realtime Database SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-  
-  <script src="script.js?v=1.0"></script>
+  <!-- USER FEEDBACK SECTION (NEW ADDITION) -->
+  <section id="feedback" class="feedback-section scroll-section">
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">SYSTEM EVALUATION</span>
+      <h2 class="section-title">TRANSMIT FEEDBACK</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="feedback-container glass-card animate-on-scroll">
+      <form id="public-feedback-form">
+        <div class="form-group">
+          <label for="user-name">YOUR IDENTITY / ALIAS</label>
+          <input type="text" id="user-name" placeholder="e.g. Cyber Explorer" required>
+        </div>
+
+        <div class="form-group">
+          <label>SYSTEM RATING</label>
+          <div class="star-rating-input">
+            <i class="fa-solid fa-star star" data-rating="1"></i>
+            <i class="fa-solid fa-star star" data-rating="2"></i>
+            <i class="fa-solid fa-star star" data-rating="3"></i>
+            <i class="fa-solid fa-star star" data-rating="4"></i>
+            <i class="fa-solid fa-star star" data-rating="5"></i>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="user-message">TRANSMISSION MESSAGE</label>
+          <textarea id="user-message" rows="4" placeholder="Share your insights or experience..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-ultra btn-primary" style="width: 100%; justify-content: center; border: none; cursor: pointer;">
+          <span>TRANSMIT FEEDBACK</span>
+          <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </form>
+      <div id="feedback-alert" class="feedback-alert"></div>
+    </div>
+
+    <!-- SECRET ADMIN FEEDBACK PANEL (CTRL + SHIFT + F) -->
+    <div id="secret-admin-panel" class="glass-card secret-panel" style="display: none; margin-top: 40px;">
+      <div class="admin-panel-header">
+        <h3><i class="fa-solid fa-user-shield"></i> ENCRYPTED FEEDBACK LOGS</h3>
+        <button id="clear-all-logs" class="btn-ultra btn-glass" style="padding: 6px 14px; font-size: 0.75rem; cursor: pointer;">Clear Logs</button>
+      </div>
+      <div id="logs-container" class="logs-container"></div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact-section scroll-section">
+    <div class="section-header animate-on-scroll">
+      <span class="section-tag">COMMUNICATION HUB</span>
+      <h2 class="section-title">START A CONVERSATION</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="contact-grid">
+      <a href="mailto:shawonahamed2306@gmail.com" class="contact-card animate-on-scroll">
+        <div class="card-icon-box"><i class="fa-regular fa-envelope"></i></div>
+        <div class="contact-meta">
+          <span class="meta-label">DIRECT EMAIL</span>
+          <span class="meta-value">shawonahamed2306@gmail.com</span>
+        </div>
+        <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      </a>
+
+      <a href="https://wa.me/8801868823817" target="_blank" class="contact-card animate-on-scroll">
+        <div class="card-icon-box"><i class="fa-brands fa-whatsapp"></i></div>
+        <div class="contact-meta">
+          <span class="meta-label">WHATSAPP OFFICIAL</span>
+          <span class="meta-value">+880 1868-823817</span>
+        </div>
+        <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      </a>
+
+      <a href="https://facebook.com" target="_blank" class="contact-card animate-on-scroll">
+        <div class="card-icon-box"><i class="fa-brands fa-facebook-f"></i></div>
+        <div class="contact-meta">
+          <span class="meta-label">SOCIAL NETWORK</span>
+          <span class="meta-value">Shawon Afran</span>
+        </div>
+        <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      </a>
+
+      <a href="https://instagram.com" target="_blank" class="contact-card animate-on-scroll">
+        <div class="card-icon-box"><i class="fa-brands fa-instagram"></i></div>
+        <div class="contact-meta">
+          <span class="meta-label">INSTAGRAM HANDLER</span>
+          <span class="meta-value">@shawon_afran</span>
+        </div>
+        <div class="card-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2026 <span class="gold-gradient">SHAWON AFRAN</span>. ENGINEERED WITH SUPREME PRECISION.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
